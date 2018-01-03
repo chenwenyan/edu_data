@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+## 年龄范围
+data = pd.read_csv('../data/big-data-1_enrolments.csv',usecols=[10])
+grouped = data.groupby('employment_status')
+#print(grouped.describe())
+
+Unknown = data[data.employment_status == 'Unknown'].count()
+full_time_student = data[data.employment_status == 'full_time_student'].count()
+looking_for_work = data[data.employment_status == 'looking_for_work'].count()
+not_working = data[data.employment_status == 'not_working'].count()
+retired = data[data.employment_status == 'retired'].count()
+self_employed = data[data.employment_status == 'self_employed'].count()
+unemployed = data[data.employment_status == 'unemployed'].count()
+working_full_time = data[data.employment_status == 'working_full_time'].count()
+working_part_time = data[data.employment_status == 'working_part_time'].count()
+
+s = pd.DataFrame([full_time_student,looking_for_work,not_working,retired,self_employed,unemployed,working_full_time,
+                  working_part_time],index=['full_time_student','looking_for_work','not_working','retired',
+                                            'self_employed','unemployed','working_full_time','working_part_time'])
+
+s.plot(kind='bar')
+plt.xlabel('employment_status')
+plt.ylabel('')
+plt.show()
