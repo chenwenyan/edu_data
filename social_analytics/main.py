@@ -1,6 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as mpl
-import glob
+import matplotlib.pyplot as plt
 
 data1 = pd.read_csv('../data/big-data-1_enrolments.csv',usecols=[0])
 data2 = pd.read_csv('../data/big-data-1_step-activity.csv')
@@ -22,7 +21,22 @@ ReturningLearners = data2[(data2['last_completed_at'].notnull()) & (data2['week_
 print(ReturningLearners)
 
 #Fully Participating Learners
-FullyParticipatingLearners = data2[data2['last_completed_at'].notnull()].groupby('week_number','step_number').size()
+FullyParticipatingLearner = data2[data2['last_completed_at'].notnull()].groupby(['week_number','step_number']).describe()
+FullyParticipatingLearner.to_csv('../data/ReturningLearners.csv', index=False, encoding='utf-8')
+# 按照week_number step_number聚合分组之后102条记录 learner_id出现102次即全部参与课程
+temp = data2.groupby('learner_id').describe()
+temp.to_csv('../data/temp.csv', index=False, encoding='utf-8')
+read_temp = pd.read_csv('../data/temp.csv',skiprows=[0])
+FullyParticipatingLearners = read_temp[read_temp['count'] == 102.0].count()
+print(FullyParticipatingLearners)
+
+#s=pd.DataFrame([joiners,learners,ActiveLearners,ReturningLearners,FullyParticipatingLearners],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
+s=pd.DataFrame([16385,7751,5821,3312,480],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
+s.plot(kind='bar')
+plt.xlabel('label')
+plt.ylabel('')
+plt.show()
+
 
 
 

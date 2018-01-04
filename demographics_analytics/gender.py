@@ -19,19 +19,3 @@ plt.ylabel('')
 plt.show()
 
 
-
-
-
-
-data2 = pd.read_csv('../data/big-data-1_step-activity.csv')
-
-#data3 = pd.DataFrame(data,data2)
-#grouped = data3.groupby("learner_id")
-#print(grouped.describe())
-
-outfile = pd.merge(data1,data2, how='left',left_on='learner_id',right_on='learner_id')
-outfile.to_csv('data/outfile.csv',index=False, encoding='gbk')
-data3 = pd.read_csv('data/outfile.csv')
-grouped = data3.groupby("learner_id")
-#print(grouped.describe())
-
