@@ -3,7 +3,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ## 国家
-data = pd.read_csv('../data/big-data-1_enrolments.csv',usecols=[9])
+# data = pd.read_csv('../data/Run 1/big-data-1_enrolments.csv',usecols=[9])
+# data = pd.read_csv('../data/Run 2/big-data-2_enrolments.csv',usecols=[9])
+# data = pd.read_csv('../data/Run 3/big-data-3_enrolments.csv',usecols=[9])
+# data = pd.read_csv('../data/Run 5/the-mind-is-flat-5_enrolments.csv',usecols=[9])
+# data = pd.read_csv('../data/Run 6/the-mind-is-flat-6_enrolments.csv',usecols=[9])
+data = pd.read_csv('../data/Run 7/the-mind-is-flat-7_enrolments.csv',usecols=[9])
 grouped = data.groupby('highest_education_level')
 #print(grouped.describe())
 

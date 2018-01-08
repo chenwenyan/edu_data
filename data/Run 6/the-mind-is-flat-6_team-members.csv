@@ -1,0 +1,7 @@
+id,first_name,last_name,team_role,user_role
+e7239f75-9bdb-48a9-a41c-5bb6318c7d99,Nick,Chater,lead_educator,learner
+d21ec1bf-de5d-4493-a853-814686b875e6,David,Hopkins,host,organisation_admin
+67488216-960d-488c-b42a-a5c21486cf7a,Jess,Whittlestone,mentor,learner
+ce8ccfa1-27b7-4ae4-b1d2-273e5c235319,Ray,Irving,host,organisation_admin
+b2ad879d-88ed-49a8-85e9-6692bb883f31,Farat,Ara,reviewer,learner
+c992b8c0-96fc-463f-bace-044965ce6ab0,Pramath,Murthy,reviewer,learner
