@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 ## 年龄范围
 data = pd.read_csv('../data/big-data-1_enrolments.csv',usecols=[8])
@@ -18,6 +19,7 @@ up65 = data[data.age_range == '>65'].count()
 s=pd.DataFrame([under18,_18_25,_26_35,_36_45,_46_55,_56_65,up65],index=['<18','18-25','26-35','36-45','46-55','55-65',
                                                                         '>65'])
 s.plot(kind='bar')
+plt.xticks(np.arange(7),('<18','18-25','26-35','36-45','46-55','55-65','>65'),rotation=27)
 plt.xlabel('age_range')
 plt.ylabel('')
 plt.show()

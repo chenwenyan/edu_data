@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 ## 年龄范围
 data = pd.read_csv('../data/big-data-1_enrolments.csv',usecols=[10])
@@ -21,6 +22,7 @@ s = pd.DataFrame([full_time_student,looking_for_work,not_working,retired,self_em
                                             'self_employed','unemployed','working_full_time','working_part_time'])
 
 s.plot(kind='bar')
+plt.xticks(np.arange(8),('full_time_student','looking_for_work','not_working','retired','self_employed','unemployed','working_full_time','working_part_time'),rotation=27)
 plt.xlabel('employment_status')
 plt.ylabel('')
 plt.show()

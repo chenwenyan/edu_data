@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 ## 国家
 data = pd.read_csv('../data/big-data-1_enrolments.csv',usecols=[9])
@@ -18,6 +19,7 @@ university_masters = data[(data.highest_education_level == 'university_masters')
 
 s=pd.DataFrame([apprenticeship,less_than_secondary,professional,secondary,tertiary,university_degree,university_doctorate,university_masters],index=['apprenticeship','less_than_secondary','professional','secondary','tertiary','university_degree','university_doctorate','university_masters'])
 s.plot(kind='bar')
+plt.xticks(np.arange(8),('apprenticeship','less_than_secondary','professional','secondary','tertiary','university_degree','university_doctorate','university_masters'),rotation=17)
 plt.xlabel('highest_education_level')
 plt.ylabel('')
 plt.show()
