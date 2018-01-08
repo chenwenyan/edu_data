@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 ## 国家
 data = pd.read_csv('../data/big-data-1_enrolments.csv',usecols=[7])
@@ -21,6 +22,7 @@ other = data[(data.country != 'Unknown')].count()
 
 s=pd.DataFrame([AU,BR,CA,DE,ES,FR,GB,RU,UA,US,other],index=['AU','BR','CA','DE','ES','FR','GB','RU','UA','US','other'])
 s.plot(kind='bar')
+plt.xticks(np.arange(10),('AU','BR','CA','DE','ES','FR','GB','RU','UA','US'),rotation=27)
 plt.xlabel('country')
 plt.ylabel('')
 plt.show();
