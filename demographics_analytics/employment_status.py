@@ -8,7 +8,8 @@ import numpy as np
 # data = pd.read_csv('../data/Run 3/big-data-3_enrolments.csv',usecols=[10])
 # data = pd.read_csv('../data/Run 5/the-mind-is-flat-5_enrolments.csv',usecols=[10])
 # data = pd.read_csv('../data/Run 6/the-mind-is-flat-6_enrolments.csv',usecols=[10])
-data = pd.read_csv('../data/Run 7/the-mind-is-flat-7_enrolments.csv',usecols=[10])
+# data = pd.read_csv('../data/Run 7/the-mind-is-flat-7_enrolments.csv',usecols=[10])
+data = pd.read_csv('../data/combination/big-data-1_enrolments.csv',usecols=[10])
 grouped = data.groupby('employment_status')
 #print(grouped.describe())
 
