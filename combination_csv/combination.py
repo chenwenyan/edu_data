@@ -8,8 +8,8 @@ def hebing():
     print(u'共发现%s个CSV文件'% len(csv_list))
     print(u'正在处理............')
     for i in csv_list:
-        fr = open(i,'r').read()
-        with open('../data/combination/all.csv','a') as f:
+        fr = open(i,'r',encoding='utf8').read()
+        with open('../data/combination/all.csv','a', encoding='utf8') as f:
             f.write(fr)
     print(u'合并完毕！')
 
@@ -20,4 +20,4 @@ def quchong(file):
 
 if __name__ == '__main__':
     hebing()
-    quchong("../data/test/all.csv")
+    quchong("../data/combination/all.csv")

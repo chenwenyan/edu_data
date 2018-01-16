@@ -17,8 +17,14 @@ import numpy as np
 # data1 = pd.read_csv('../data/Run 6/the-mind-is-flat-6_enrolments.csv',usecols=[0])
 # data2 = pd.read_csv('../data/Run 6/the-mind-is-flat-6_step-activity.csv')
 #
-data1 = pd.read_csv('../data/Run 7/the-mind-is-flat-7_enrolments.csv',usecols=[0])
-data2 = pd.read_csv('../data/Run 7/the-mind-is-flat-7_step-activity.csv')
+# data1 = pd.read_csv('../data/Run 7/the-mind-is-flat-7_enrolments.csv',usecols=[0])
+# data2 = pd.read_csv('../data/Run 7/the-mind-is-flat-7_step-activity.csv')
+
+# data1 = pd.read_csv('../data/bigdata/enrolments.csv',usecols=[0])
+# data2 = pd.read_csv('../data/bigdata/step-activity-1.csv')
+
+data1 = pd.read_csv('../data/themindisflat/enrolments.csv',usecols=[0])
+data2 = pd.read_csv('../data/themindisflat/step-activity.csv')
 
 #Joiners
 joiners = data1[data1.learner_id != ''].count()
@@ -44,7 +50,7 @@ FullyParticipatingLearner.to_csv('../data/ReturningLearners.csv', index=False, e
 temp = data2.groupby('learner_id').describe()
 temp.to_csv('../data/temp.csv', index=False, encoding='utf-8')
 read_temp = pd.read_csv('../data/temp.csv',skiprows=[0])
-FullyParticipatingLearners = read_temp[read_temp['count'] == 102.0].count()
+FullyParticipatingLearners = read_temp[read_temp['count'] == 102].count()
 print(FullyParticipatingLearners)
 
 # s=pd.DataFrame([joiners,learners,ActiveLearners,ReturningLearners,FullyParticipatingLearners],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
@@ -53,7 +59,9 @@ print(FullyParticipatingLearners)
 # s=pd.DataFrame([5761,3847,2154,1030,202],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
 # s=pd.DataFrame([13463,5459,4228,1489,202],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
 # s=pd.DataFrame([14254,6152,5211,1960,0],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
-s=pd.DataFrame([7515,3287,2667,951,0],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
+# s=pd.DataFrame([14254,6152,5211,1960,0],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
+# s=pd.DataFrame([33428,16082,11468,7882,1036],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
+s=pd.DataFrame([35233,14771,12038,10334,1],index=['joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'])
 s.plot(kind='bar')
 plt.xticks(np.arange(5),('joiners','learners','ActiveLearners','ReturningLearners','FullyParticipatingLearners'),rotation=27)
 plt.xlabel('label')

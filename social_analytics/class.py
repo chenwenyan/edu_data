@@ -8,7 +8,8 @@ import numpy as np
 # data2 = pd.read_csv('../data/Run 3/big-data-3_comments.csv', usecols=[0, 1, 2, 5, 8],skip_blank_lines=True )
 # data2 = pd.read_csv('../data/Run 5/the-mind-is-flat-5_comments.csv', usecols=[0, 1, 2, 5, 9],skip_blank_lines=True )
 # data2 = pd.read_csv('../data/Run 6/the-mind-is-flat-6_comments.csv', usecols=[0, 1, 2, 5, 9],skip_blank_lines=True )
-data2 = pd.read_csv('../data/Run 7/the-mind-is-flat-7_comments.csv', usecols=[0, 1, 2, 5, 8],skip_blank_lines=True )
+# data2 = pd.read_csv('../data/Run 7/the-mind-is-flat-7_comments.csv', usecols=[0, 1, 2, 5, 8],skip_blank_lines=True )
+data2 = pd.read_csv('../data/bigdata/comments.csv', usecols=[0, 1, 2, 5, 7],skip_blank_lines=True )
 
 # Social learners
 # SocialLearners = data2[(data2.likes >= 1) | data2.text.notNull()].groupby('author_id').size()
